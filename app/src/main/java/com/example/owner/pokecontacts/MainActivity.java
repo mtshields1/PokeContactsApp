@@ -75,9 +75,6 @@ public class MainActivity extends AppCompatActivity
         //-----< Now get the contacts >-----
         Cursor cursor_android_contacts = null;
 
-        //-----< Content resolver connects to the Android's database >-----
-        //ContentResolver contentResolver = getContentResolver();
-
         //-----< This will give all contacts >-----
         cursor_android_contacts = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
 
@@ -85,41 +82,27 @@ public class MainActivity extends AppCompatActivity
         {
             while (cursor_android_contacts.moveToNext())
             {
+                //-----< create a new android contact object for retrieval >-----
                 Android_Contact theContact = new Android_Contact();
-                String contact_id = cursor_android_contacts.getString(cursor_android_contacts.getColumnIndex(ContactsContract.Contacts._ID));
-                String contactDisplayName = cursor_android_contacts.getString(cursor_android_contacts.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME));
 
-                //-----< Set the contact name >-----
-                theContact.android_contact_name = contactDisplayName;
-
-                //-----< Retrieve the phone number. Start by checking to make sure the contact has a phone number >-----
+                //-----< ensure that the contact has a phone number >-----
                 int hasPhoneNumber = Integer.parseInt(cursor_android_contacts.getString(cursor_android_contacts.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER)));
+
                 if (hasPhoneNumber > 0)
                 {
-                    Cursor phoneCursor = getContentResolver().query(
-                            ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
-                            null,
-                            ContactsContract.CommonDataKinds.Phone.CONTACT_ID + " - ?",
-                            new String[] {contact_id},
-                            null
-                    );
+                    //<----< retrieve and add the contact's name to the contact object >----
+                    String contactDisplayName = cursor_android_contacts.getString(cursor_android_contacts.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
+                    theContact.android_contact_name = contactDisplayName;
 
-                    while (phoneCursor.moveToNext())
-                    {
-                        String name = phoneCursor.getString(phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
-                        String phoneNumber = phoneCursor.getString(phoneCursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                    //----< retrieve and add the number to the contact object >-----
+                    String number = cursor_android_contacts.getString(cursor_android_contacts.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
+                    theContact.android_contact_number = number;
 
-                        //-----< Set the phone number >-----
-                        if (name != null)
-                        {
-                            theContact.android_contact_number = phoneNumber;
-                        }
-                    }
-                    phoneCursor.close();
+                    System.out.println(theContact.android_contact_number + " num in obj");
+
+                    //-----< add the contact to the contact arraylist >-----
+                    android_contact_data.add(theContact);
                 }
-
-                //-----< add the contact to the contact arraylist >-----
-                android_contact_data.add(theContact);
             }
         }
         //List<PhoneBook> listPhoneBook = new ArrayList<PhoneBook>();
