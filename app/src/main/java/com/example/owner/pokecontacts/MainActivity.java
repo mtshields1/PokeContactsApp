@@ -20,6 +20,8 @@ public class MainActivity extends AppCompatActivity
 {
 
     private ListView lvPhone;
+    protected String previousName = "";
+    protected String previousNum = "";
 
     /*public class Android_Contact
     {
@@ -98,8 +100,12 @@ public class MainActivity extends AppCompatActivity
                     String number = cursor_android_contacts.getString(cursor_android_contacts.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                     theContact.android_contact_number = number;
 
-                    //-----< add the contact to the contact arraylist >-----
-                    android_contact_data.add(theContact);
+                    //-----< add the contact to the contact arraylist if it wasn't added previously >-----
+                    if (!contactDisplayName.equals(previousName)){
+                        android_contact_data.add(theContact);
+                    }
+                    previousName = contactDisplayName;
+                    previousNum = number.replaceAll("\\D+","");
                 }
             }
         }
@@ -109,5 +115,14 @@ public class MainActivity extends AppCompatActivity
 
         PhoneBookAdapter adapter = new PhoneBookAdapter(this, android_contact_data);
         lvPhone.setAdapter(adapter);
+        
+        //-----< set an action on clicking an item >-----
+        lvPhone.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String msg = "select";
+                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
