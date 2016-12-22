@@ -5,6 +5,7 @@ package com.example.owner.pokecontacts;
  */
 
 import android.graphics.Bitmap;
+import android.webkit.WebView;
 
 public class Android_Contact
 {
