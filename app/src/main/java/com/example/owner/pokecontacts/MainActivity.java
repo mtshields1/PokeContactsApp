@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity
         Cursor cursor_android_contacts = null;
 
         //-----< This will give all contacts >-----
-        cursor_android_contacts = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, null);
+        cursor_android_contacts = getContentResolver().query(ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null, null, null, ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME + " ASC");
 
         if (cursor_android_contacts.getCount() > 0)
         {
@@ -97,8 +97,6 @@ public class MainActivity extends AppCompatActivity
                     //----< retrieve and add the number to the contact object >-----
                     String number = cursor_android_contacts.getString(cursor_android_contacts.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                     theContact.android_contact_number = number;
-
-                    System.out.println(theContact.android_contact_number + " num in obj");
 
                     //-----< add the contact to the contact arraylist >-----
                     android_contact_data.add(theContact);
