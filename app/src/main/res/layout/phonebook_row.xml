@@ -3,11 +3,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <ImageView android:id="@+id/imgAvatar"
-        android:layout_width="70dip"
-        android:layout_height="70dip"
+    <WebView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/webView"
         android:scaleType="fitCenter"
-        android:src="@mipmap/ic_launcher"/>
+        android:src="@mipmap/ic_launcher" />
 
     <LinearLayout android:orientation="vertical"
         android:layout_width="fill_parent"
