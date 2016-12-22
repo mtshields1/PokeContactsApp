@@ -8,7 +8,8 @@ import android.graphics.Bitmap;
 
 public class Android_Contact
 {
-    private Bitmap mAvatar;
+    //private Bitmap mAvatar;
+    protected WebView mAvatar = null;
     protected String android_contact_name = "";
     protected String android_contact_number = "";
     protected int android_contact_ID = 0;
@@ -25,7 +26,7 @@ public class Android_Contact
 
     public void setmAvatar(Bitmap mAvatar)
     {
-        this.mAvatar = mAvatar;
+        //this.mAvatar = mAvatar;
     }
 
     public String getmName()
