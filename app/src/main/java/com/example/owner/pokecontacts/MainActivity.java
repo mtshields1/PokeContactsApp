@@ -23,13 +23,6 @@ public class MainActivity extends AppCompatActivity
     protected String previousName = "";
     protected String previousNum = "";
 
-    /*public class Android_Contact
-    {
-        public String android_contact_name = "";
-        public String android_contact_number = "";
-        public int android_contact_ID = 0;
-    }*/
-
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -98,7 +91,7 @@ public class MainActivity extends AppCompatActivity
 
                     //----< retrieve and add the number to the contact object >-----
                     String number = cursor_android_contacts.getString(cursor_android_contacts.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
-                    theContact.android_contact_number = number;
+                    theContact.android_contact_number = number.replaceAll("\\D+","");
 
                     //-----< add the contact to the contact arraylist if it wasn't added previously >-----
                     if (!contactDisplayName.equals(previousName)){
