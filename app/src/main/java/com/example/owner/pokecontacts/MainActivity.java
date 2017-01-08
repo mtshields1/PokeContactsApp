@@ -1,10 +1,15 @@
 package com.example.owner.pokecontacts;
 
+import android.app.Activity;
 import android.content.ContentResolver;
 import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
+import android.view.View;
+import android.webkit.WebView;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.database.Cursor;
 import android.graphics.BitmapFactory;
@@ -15,6 +20,10 @@ import android.content.pm.PackageManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.net.Uri;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
+import android.content.Intent;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -22,6 +31,7 @@ public class MainActivity extends AppCompatActivity
     private ListView lvPhone;
     protected String previousName = "";
     protected String previousNum = "";
+    protected  Android_Contact curr_selected = null;  //This will be for calling, texting, etc with the user selected contact
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -109,13 +119,54 @@ public class MainActivity extends AppCompatActivity
         PhoneBookAdapter adapter = new PhoneBookAdapter(this, android_contact_data);
         lvPhone.setAdapter(adapter);
         
+        //-----< Register a context menu for the list view when a contact is selected >-----
+        registerForContextMenu(lvPhone);
+
         //-----< set an action on clicking an item >-----
         lvPhone.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String msg = "select";
-                Toast.makeText(getApplicationContext(), msg, Toast.LENGTH_LONG).show();
+                Android_Contact selected_contact = (Android_Contact) adapter.getItem(position);
+                curr_selected = selected_contact;
+                //System.out.println("selected contact num: " + selected_contact.getmPhone());
+                view.showContextMenu();
             }
         });
+    }
+
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) 
+    {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        if (v.getId() == R.id.listPhone){
+            AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
+            menu.setHeaderTitle("Options");
+            menu.add(0, v.getId(), 0, "Call");
+            menu.add(0, v.getId(), 0, "Text");
+            menu.add(0, v.getId(), 0, "Change Pokemon");
+        }
+    }
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item)
+    {
+        if (item.getTitle() == "Call"){
+            
+            //-----< The call function will display the number in the keypad so the user can decide to call or cancel >-----
+            //-----< This makes for a better user experience >-----
+            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", curr_selected.getmPhone(), null));
+            startActivity(intent);
+        }
+        else if (item.getTitle() == "Text"){
+            //Toast.makeText(getApplicationContext(),"text", Toast.LENGTH_LONG).show();  //DEBUG DELETE
+        }
+        else if (item.getTitle() == "Change Pokemon"){
+            //Toast.makeText(getApplicationContext(),"mon", Toast.LENGTH_LONG).show();  //DEBUG DELETE
+        }
+        else{
+            return false;
+        }
+        return true;
     }
 }
