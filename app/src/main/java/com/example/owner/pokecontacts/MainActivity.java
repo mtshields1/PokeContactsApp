@@ -112,11 +112,9 @@ public class MainActivity extends AppCompatActivity
                 }
             }
         }
-        //List<PhoneBook> listPhoneBook = new ArrayList<PhoneBook>();
-        //listPhoneBook.add(new PhoneBook(BitmapFactory.decodeResource(getResources(), R.mipmap.doge_stare), "Contact 1", "765-5678", "tru1@gmail.com"));
-        //add contacts here
 
         PhoneBookAdapter adapter = new PhoneBookAdapter(this, android_contact_data);
+        adapter.setPokemon();      //this will set the possible pokemon avatars
         lvPhone.setAdapter(adapter);
         
         //-----< Register a context menu for the list view when a contact is selected >-----
@@ -128,7 +126,6 @@ public class MainActivity extends AppCompatActivity
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Android_Contact selected_contact = (Android_Contact) adapter.getItem(position);
                 curr_selected = selected_contact;
-                //System.out.println("selected contact num: " + selected_contact.getmPhone());
                 view.showContextMenu();
             }
         });
