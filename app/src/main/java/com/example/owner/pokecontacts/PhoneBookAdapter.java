@@ -18,6 +18,11 @@ public class PhoneBookAdapter extends BaseAdapter
 {
     private Context mContext;
     private ArrayList<Android_Contact> mListPhoneBook;
+    private HashMap<Integer, String> pokeList = new HashMap<Integer, String>();  //this hashmap will map random integers to their respective pokemon number for contact avatars
+    private Random rand = new Random();   //for getting random pokemon avatar outcomes at initialization
+    private int low = 1;    //minimum pokedex number for random seed
+    private int high = 10;   //maximum pokedex number (exclusive) for random seed. This should be 1 higher than maximum seed number
+    private StringBuilder avatarString = new StringBuilder();   //this will hold the avatar name for the contact
 
     public PhoneBookAdapter(Context context, ArrayList<Android_Contact> list)
     {
@@ -54,48 +59,21 @@ public class PhoneBookAdapter extends BaseAdapter
             convertView = inflater.inflate(R.layout.phonebook_row, null);
         }
 
-        //-----< this is where the gif avatars will be set >-----
-        if (entry.getmName().toString().equals("Mekem")){
-            WebView wv = (WebView)convertView.findViewById(R.id.webView);
-            wv.loadUrl("file:///android_asset/shiny_shinx.gif");
-            wv.getSettings().setLoadWithOverviewMode(true);
-            wv.getSettings().setUseWideViewPort(true);
-            wv.setClickable(false);
-            wv.setLongClickable(false);
-            wv.setFocusable(false);
-            wv.setFocusableInTouchMode(false);
-        }
-        else if (entry.getmName().toString().equals("Yo Khurl")){
-            WebView wv = (WebView)convertView.findViewById(R.id.webView);
-            wv.loadUrl("file:///android_asset/hitmonchan.gif");
-            wv.getSettings().setLoadWithOverviewMode(true);
-            wv.getSettings().setUseWideViewPort(true);
-            wv.setClickable(false);
-            wv.setLongClickable(false);
-            wv.setFocusable(false);
-            wv.setFocusableInTouchMode(false);
-        }
-        else if (entry.getmName().toString().equals("Dan Dan")){
-            WebView wv = (WebView)convertView.findViewById(R.id.webView);
-            wv.loadUrl("file:///android_asset/salamence.gif");
-            wv.getSettings().setLoadWithOverviewMode(true);
-            wv.getSettings().setUseWideViewPort(true);
-            wv.setClickable(false);
-            wv.setLongClickable(false);
-            wv.setFocusable(false);
-            wv.setFocusableInTouchMode(false);
-        }
-        else
-        {
-            WebView wv = (WebView)convertView.findViewById(R.id.webView);
-            wv.loadUrl("file:///android_asset/pidgey.gif");
-            wv.getSettings().setLoadWithOverviewMode(true);
-            wv.getSettings().setUseWideViewPort(true);
-            wv.setClickable(false);
-            wv.setLongClickable(false);
-            wv.setFocusable(false);
-            wv.setFocusableInTouchMode(false);
-        }
+        int pokedexNumber = rand.nextInt(high-low) + low;   //this ensures a random pokemon avatar outcome
+        String pokemonName = pokeList.get(pokedexNumber);
+        avatarString.append(pokemonName + ".gif");
+
+        //-----< The following code sets the pokemon avatar gif image for the contact >-----
+        WebView wv = (WebView)convertView.findViewById(R.id.webView);
+        wv.loadUrl("file:///android_asset/" + avatarString.toString());  //use the avatar string to retrieve the gif image for this contact's avatar
+        wv.getSettings().setLoadWithOverviewMode(true);
+        wv.getSettings().setUseWideViewPort(true);
+        wv.setClickable(false);
+        wv.setLongClickable(false);
+        wv.setFocusable(false);
+        wv.setFocusableInTouchMode(false);
+
+        avatarString.setLength(0);     //clear the stringbuilder
 
         TextView tvName = (TextView)convertView.findViewById(R.id.tvName);
         tvName.setText(entry.getmName());
@@ -104,5 +82,17 @@ public class PhoneBookAdapter extends BaseAdapter
         tvPhone.setText(entry.getmPhone());
 
         return convertView;
+    }
+    
+    public void setPokemon(){
+        pokeList.put(1, "bulbasaur");
+        pokeList.put(2, "ivysaur");
+        pokeList.put(3, "venusaur");
+        pokeList.put(4, "charmander");
+        pokeList.put(5, "charmeleon");
+        pokeList.put(6, "charizard");
+        pokeList.put(7, "squirtle");
+        pokeList.put(8, "wartortle");
+        pokeList.put(9, "blastoise");
     }
 }
