@@ -9,6 +9,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.content.Context;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
 
 /**
  * Created by Owner on 11/29/2016.
