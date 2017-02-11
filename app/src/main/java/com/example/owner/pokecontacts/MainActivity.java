@@ -159,7 +159,8 @@ public class MainActivity extends AppCompatActivity
             startActivity(intent);
         }
         else if (item.getTitle() == "Text"){
-            //Toast.makeText(getApplicationContext(),"text", Toast.LENGTH_LONG).show();  //DEBUG DELETE
+            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + curr_selected.getmPhone()));
+            startActivity(intent);
         }
         else if (item.getTitle() == "Change Pokemon"){
             //Toast.makeText(getApplicationContext(),"mon", Toast.LENGTH_LONG).show();  //DEBUG DELETE
