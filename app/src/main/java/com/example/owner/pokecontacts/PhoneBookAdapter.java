@@ -10,7 +10,6 @@ import android.widget.TextView;
 import android.content.Context;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Random;
 
 /**
  * Created by Owner on 11/29/2016.
@@ -21,9 +20,6 @@ public class PhoneBookAdapter extends BaseAdapter
     private Context mContext;
     private ArrayList<Android_Contact> mListPhoneBook;
     private HashMap<Integer, String> pokeList = new HashMap<Integer, String>();  //this hashmap will map random integers to their respective pokemon number for contact avatars
-    private Random rand = new Random();   //for getting random pokemon avatar outcomes at initialization
-    private int low = 1;    //minimum pokedex number for random seed
-    private int high = 10;   //maximum pokedex number (exclusive) for random seed. This should be 1 higher than maximum seed number
     private StringBuilder avatarString = new StringBuilder();   //this will hold the avatar name for the contact
 
     public PhoneBookAdapter(Context context, ArrayList<Android_Contact> list)
@@ -61,7 +57,8 @@ public class PhoneBookAdapter extends BaseAdapter
             convertView = inflater.inflate(R.layout.phonebook_row, null);
         }
 
-        int pokedexNumber = rand.nextInt(high-low) + low;   //this ensures a random pokemon avatar outcome
+        //-----< Retrieve the contact's pokedex number to set the contact's avatar >-----
+        int pokedexNumber = entry.getPokemonAvatarNumber();
         String pokemonName = pokeList.get(pokedexNumber);
         avatarString.append(pokemonName + ".gif");
 
