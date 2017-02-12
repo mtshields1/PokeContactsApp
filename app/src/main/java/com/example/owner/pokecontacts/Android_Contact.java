@@ -13,7 +13,7 @@ public class Android_Contact
     protected WebView mAvatar = null;
     protected String android_contact_name = "";
     protected String android_contact_number = "";
-    protected int android_contact_ID = 0;
+    protected int pokemonAvatarNumber = 0;  //0 as default. 0 is not a possible random number
 
     public Android_Contact()
     {
@@ -48,6 +48,19 @@ public class Android_Contact
     public void setmPhone(String mPhone)
     {
         android_contact_number = mPhone;
+    }
+    
+    public int getPokemonAvatarNumber () 
+    {
+        return pokemonAvatarNumber; 
+    }
+    
+    public void setAvatarNum (int num)
+    {
+        if (pokemonAvatarNumber == 0) 
+        {
+            pokemonAvatarNumber = num;
+        }
     }
 
 }
