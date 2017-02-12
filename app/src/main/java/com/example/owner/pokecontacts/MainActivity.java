@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity
     protected String previousName = "";
     protected String previousNum = "";
     protected  Android_Contact curr_selected = null;  //This will be for calling, texting, etc with the user selected contact
+    private Random rand = new Random();   //for getting random pokemon avatar outcomes at initialization
+    private int low = 1;    //minimum pokedex number for random seed
+    private int high = 10;   //maximum pokedex number (exclusive) for random seed. This should be 1 higher than maximum seed number
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -98,6 +101,10 @@ public class MainActivity extends AppCompatActivity
                     //<----< retrieve and add the contact's name to the contact object >----
                     String contactDisplayName = cursor_android_contacts.getString(cursor_android_contacts.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
                     theContact.android_contact_name = contactDisplayName;
+                    
+                    //<----< get a random number for the contact's pokemon avatar >----
+                    int pokedexNumber = rand.nextInt(high-low) + low;   //this ensures a random pokemon avatar outcome
+                    theContact.setAvatarNum(pokedexNumber);
 
                     //----< retrieve and add the number to the contact object >-----
                     String number = cursor_android_contacts.getString(cursor_android_contacts.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
@@ -113,7 +120,7 @@ public class MainActivity extends AppCompatActivity
             }
         }
 
-        PhoneBookAdapter adapter = new PhoneBookAdapter(this, android_contact_data);
+        final PhoneBookAdapter adapter = new PhoneBookAdapter(this, android_contact_data);
         adapter.setPokemon();      //this will set the possible pokemon avatars
         lvPhone.setAdapter(adapter);
         
