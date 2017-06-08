@@ -11,6 +11,12 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.interfaces.DraweeController;
+import com.facebook.drawee.view.SimpleDraweeView;
+import android.net.Uri;
+
+import android.webkit.WebView;
 /**
  * Created by Owner on 11/29/2016.
  */
@@ -63,14 +69,24 @@ public class PhoneBookAdapter extends BaseAdapter
         avatarString.append(pokemonName + ".gif");
 
         //-----< The following code sets the pokemon avatar gif image for the contact >-----
-        WebView wv = (WebView)convertView.findViewById(R.id.webView);
+        /*WebView wv = (WebView)convertView.findViewById(R.id.webView);
         wv.loadUrl("file:///android_asset/" + avatarString.toString());  //use the avatar string to retrieve the gif image for this contact's avatar
         wv.getSettings().setLoadWithOverviewMode(true);
         wv.getSettings().setUseWideViewPort(true);
         wv.setClickable(false);
         wv.setLongClickable(false);
         wv.setFocusable(false);
-        wv.setFocusableInTouchMode(false);
+        wv.setFocusableInTouchMode(false);*/ //this code is for non fresco gif usage
+
+        SimpleDraweeView draweeView = (SimpleDraweeView)convertView.findViewById(R.id.my_image_view);
+        Uri uri = Uri.parse("asset:///" + avatarString.toString());
+        DraweeController controller =
+                Fresco.newDraweeControllerBuilder()
+                        .setUri(uri)
+                        .setAutoPlayAnimations(true)
+                        .build();
+
+        draweeView.setController(controller);
 
         avatarString.setLength(0);     //clear the stringbuilder
 
