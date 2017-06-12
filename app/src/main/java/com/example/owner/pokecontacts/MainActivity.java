@@ -24,8 +24,9 @@ import android.net.Uri;
 import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.content.Intent;
+import com.facebook.drawee.backends.pipeline.Fresco;
 
-public class MainActivity extends AppCompatActivity
+public class MainActivity extends Activity
 {
 
     private ListView lvPhone;
