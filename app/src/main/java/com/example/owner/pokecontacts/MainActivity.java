@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity
     protected String previousName = "";
     protected String previousNum = "";
     protected  Android_Contact curr_selected = null;  //This will be for calling, texting, etc with the user selected contact
+    protected static final HashMap<String, Integer> savedAvatarNums = new HashMap<String, Integer>(); //For saving contact's avatars. Key will be contact phone number, value will be pokedex number
     private Random rand = new Random();   //for getting random pokemon avatar outcomes at initialization
     private int low = 1;    //minimum pokedex number for random seed
     private int high = 10;   //maximum pokedex number (exclusive) for random seed. This should be 1 higher than maximum seed number
@@ -39,13 +40,48 @@ public class MainActivity extends AppCompatActivity
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
+        Fresco.initialize(this);
         super.onCreate(savedInstanceState);
+        
+        //---< App has been used before. Recover the save state >---
+        if (savedInstanceState != null)
+        {
+            super.onRestoreInstanceState(savedInstanceState);
+            HashMap<String, Integer> savedAvatarNums = (HashMap<String, Integer>) savedInstanceState.getSerializable("saveData");
+        }
+        
         setContentView(R.layout.activity_main);
 
         ActivityCompat.requestPermissions(MainActivity.this,
                 new String[]{Manifest.permission.READ_CONTACTS},
                 1);
 
+    }
+    
+    //---< This method is invoked upon pressing the back button or switching apps -->
+    @Override
+    public void onStop()
+    {
+        getIntent().putExtra("theMap", savedAvatarNums);
+        super.onStop();
+    }
+
+    //---< Restore save data when resuming the app; the complement to onStop >---
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        HashMap<String, Integer> savedAvatarNums = (HashMap<String, Integer>)getIntent().getSerializableExtra("theMap");
+    }
+    
+    //----< This method is called upon the app activity stopping and stores >-----
+    //----< Needed save state information. This method overrides another saveInstanceState >----
+    //----< that needs to be called, the super call >-----
+    @Override
+    public void onSaveInstanceState(Bundle outState)
+    {
+        outState.putSerializable("saveData", savedAvatarNums);
+        super.onSaveInstanceState(outState);
     }
 
     @Override
@@ -102,13 +138,21 @@ public class MainActivity extends AppCompatActivity
                     String contactDisplayName = cursor_android_contacts.getString(cursor_android_contacts.getColumnIndex(ContactsContract.CommonDataKinds.Phone.DISPLAY_NAME));
                     theContact.android_contact_name = contactDisplayName;
                     
-                    //<----< get a random number for the contact's pokemon avatar >----
-                    int pokedexNumber = rand.nextInt(high-low) + low;   //this ensures a random pokemon avatar outcome
-                    theContact.setAvatarNum(pokedexNumber);
-
                     //----< retrieve and add the number to the contact object >-----
                     String number = cursor_android_contacts.getString(cursor_android_contacts.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER));
                     theContact.android_contact_number = number.replaceAll("\\D+","");
+                    
+                    if (savedAvatarNums.containsKey(number.replaceAll("\\D", "")))  //This contact has existed before. Get their pokedex number
+                    {
+                        theContact.setAvatarNum(savedAvatarNums.get(number.replaceAll("\\D", "")));
+                    }
+                    else
+                    {
+                        //<----< get a random number for the contact's pokemon avatar and put the number into the saveData map >----
+                        int pokedexNumber = rand.nextInt(high-low) + low;   //this ensures a random pokemon avatar outcome
+                        theContact.setAvatarNum(pokedexNumber);
+                        savedAvatarNums.put(number.replaceAll("\\D", ""), pokedexNumber);
+                    }
 
                     //-----< add the contact to the contact arraylist if it wasn't added previously >-----
                     if (!contactDisplayName.equals(previousName)){
@@ -166,8 +210,10 @@ public class MainActivity extends AppCompatActivity
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + curr_selected.getmPhone()));
             startActivity(intent);
         }
-        else if (item.getTitle() == "Change Pokemon"){
-            //Toast.makeText(getApplicationContext(),"mon", Toast.LENGTH_LONG).show();  //DEBUG DELETE
+        else if (item.getTitle() == "Change Pokemon")
+        {
+            //savedAvatarNums.put("17178842967", 1);
+            //showContacts();
         }
         else{
             return false;
