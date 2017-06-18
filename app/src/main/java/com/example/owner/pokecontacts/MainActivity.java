@@ -25,6 +25,11 @@ import android.view.ContextMenu;
 import android.view.ContextMenu.ContextMenuInfo;
 import android.content.Intent;
 import com.facebook.drawee.backends.pipeline.Fresco;
+import java.io.FileOutputStream;
+import java.io.FileInputStream;
+import android.content.Context;
+import java.io.ObjectOutputStream;
+import java.io.ObjectInputStream;
 
 public class MainActivity extends Activity
 {
@@ -50,6 +55,30 @@ public class MainActivity extends Activity
             super.onRestoreInstanceState(savedInstanceState);
             HashMap<String, Integer> savedAvatarNums = (HashMap<String, Integer>) savedInstanceState.getSerializable("saveData");
         }
+        else
+        {
+            //---< Enter this else either if the app hasn't been used before, or if it has >--
+            //---< been used bfore, but was either killed by the system/user or the phone >--
+            //---< was restarted. See the onPause method for motre details >--
+            try
+            {
+                String FILENAME = "pokefile";
+                FileInputStream fos = openFileInput(FILENAME);
+                ObjectInputStream in = new ObjectInputStream(fos);
+                HashMap<String, Integer> newMap = (HashMap<String, Integer>) in.readObject();
+                savedAvatarNums.putAll(newMap);
+                in.close();
+                fos.close();
+            }
+            catch (java.io.IOException ioe)
+            {
+
+            }
+            catch (ClassNotFoundException cnfe)
+            {
+
+            }
+        }
         
         setContentView(R.layout.activity_main);
 
@@ -57,6 +86,31 @@ public class MainActivity extends Activity
                 new String[]{Manifest.permission.READ_CONTACTS},
                 1);
 
+    }
+    
+    //---< This method is invoked upon leaving the app in several instances. >--
+    //---< This particular method call and File creation is for when the app >--
+    //---< is either killed by the system/user or when restarting the phone. >--
+    //---< The savedAvatarNums hashmap is written to the pokefile through a >--
+    //---< ObjectOutputStream. Then, in onCreate, if savedInstanceState is >--
+    //---< null, this file is attempted to be open to recover the hashmap instead >--
+    @Override
+    public void onPause()
+    {
+        try
+        {
+            String FILENAME = "pokefile";
+            FileOutputStream fos = openFileOutput(FILENAME, Context.MODE_PRIVATE);
+            ObjectOutputStream out = new ObjectOutputStream(fos);
+            out.writeObject(savedAvatarNums);
+            out.close();
+            fos.close();
+        }
+        catch (java.io.IOException ioe)
+        {
+
+        }
+        super.onPause();
     }
     
     //---< This method is invoked upon pressing the back button or switching apps -->
