@@ -16,8 +16,9 @@
         android:layout_height="wrap_content"> NEEDED FOR WEBVIEW. NOT NEEDED FOR FRESCO-->
 
     <LinearLayout
-        android:layout_width="fill_parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
         android:orientation="vertical">
         
         <com.facebook.drawee.view.SimpleDraweeView
@@ -26,18 +27,22 @@
             android:layout_height="60dp"
             fresco:placeholderImage="@mipmap/pokeball" />
         
-        <TextView android:id="@+id/tvName"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textStyle="bold"/>
-
-        <TextView android:id="@+id/tvPhone"
+        <TextView
+            android:id="@+id/tvName"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            style="@style/AudioFileInfoOverlayText"
+            android:textColor="#F0FFFF"
+            android:textStyle="bold" />
 
-        <!--<TextView android:id="@+id/tvEmail"
+        <TextView
+            android:id="@+id/tvPhone"
             android:layout_width="fill_parent"
-            android:layout_height="wrap_content"/>-->
+            android:layout_height="wrap_content"
+            style="@style/AudioFileInfoOverlayText"
+            android:textColor="#F0FFFF"
+            android:gravity="center_horizontal" />
 
     </LinearLayout>
 
