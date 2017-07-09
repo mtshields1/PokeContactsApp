@@ -223,6 +223,15 @@ public class MainActivity extends Activity
         adapter.setPokemon();      //this will set the possible pokemon avatars
         lvPhone.setAdapter(adapter);
         
+        //-----< To implement the vertical alphabet at right for selecting a row of >----
+        //-----< contacts that start with that letter quickly, make the top level parent >----
+        //-----< view a view group. Then, inflate the new view to implement on top of the >----
+        //-----< already created view, phonebook_row, and add the view to the parent >----
+        ViewGroup vg = (ViewGroup) findViewById(android.R.id.content);
+        LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        View menuLayout = inflater.inflate(R.layout.vertical_alphabet, vg,false);
+        vg.addView(menuLayout, 1);
+        
         //-----< Register a context menu for the list view when a contact is selected >-----
         registerForContextMenu(lvPhone);
 
