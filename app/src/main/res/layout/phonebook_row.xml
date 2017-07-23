@@ -25,7 +25,7 @@
             android:id="@+id/my_image_view"
             android:layout_width="60dp"
             android:layout_height="60dp"
-            fresco:placeholderImage="@mipmap/pokeball" />
+            fresco:placeholderImage="@mipmap/retro_pokeball" />
         
         <TextView
             android:id="@+id/tvName"
