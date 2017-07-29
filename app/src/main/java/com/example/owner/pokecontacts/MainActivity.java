@@ -30,6 +30,9 @@ import java.io.FileInputStream;
 import android.content.Context;
 import java.io.ObjectOutputStream;
 import java.io.ObjectInputStream;
+import android.widget.TextView;
+import android.view.ViewGroup;
+import android.view.LayoutInflater;
 
 public class MainActivity extends Activity
 {

@@ -20,10 +20,10 @@ public class Android_Contact
         //no op
     }
 
-    public Bitmap getmAvatar()
+    /*public Bitmap getmAvatar()
     {
         return mAvatar;
-    }
+    }*/
 
     public void setmAvatar(Bitmap mAvatar)
     {
