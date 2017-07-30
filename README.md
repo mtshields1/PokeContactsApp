@@ -7,5 +7,5 @@ were added, hence the project's name. Besides the usual phone actions, each cont
 original 150. This avatar can, of course, be changed, for all contacts. In addition, an alphabetic bar for fastscrolling to contacts
 was added for easier and quicker navigation of contacts
 
-+ Libraries used +
+Libraries used:
 - Fresco
