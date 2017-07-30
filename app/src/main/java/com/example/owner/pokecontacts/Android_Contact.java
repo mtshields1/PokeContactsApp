@@ -7,7 +7,9 @@ package com.example.owner.pokecontacts;
 import android.graphics.Bitmap;
 import android.webkit.WebView;
 
-public class Android_Contact
+import java.io.Serializable;
+
+public class Android_Contact implements Serializable
 {
     //private Bitmap mAvatar;
     protected WebView mAvatar = null;

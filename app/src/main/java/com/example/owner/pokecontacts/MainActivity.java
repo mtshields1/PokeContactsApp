@@ -289,7 +289,15 @@ public class MainActivity extends Activity
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Android_Contact selected_contact = (Android_Contact) adapter.getItem(position);
                 curr_selected = selected_contact;
-                view.showContextMenu();
+
+                //-----< Make an intent to send data between activities when a contact is selected >-----
+                Intent sendIntent = new Intent();
+                Bundle contactBundle = new Bundle();
+                contactBundle.putSerializable("current_contact", curr_selected);
+                sendIntent.putExtras(contactBundle);
+                sendIntent.setClass(getApplicationContext(), ContactInfo.class);
+                startActivity(sendIntent);
+                //view.showContextMenu();
             }
         });
         initializeClickListeners();  //Initialize every clicklistener for the vertical alphabet
