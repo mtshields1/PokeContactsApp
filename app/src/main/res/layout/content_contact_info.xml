@@ -37,7 +37,7 @@
         android:layout_marginBottom="144dp"
         android:layout_marginLeft="60dp"
         android:layout_marginStart="60dp"
-        app:srcCompat="@mipmap/pokegear"
+        app:srcCompat="@mipmap/pokedex_sprite"
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -58,6 +58,36 @@
         android:layout_alignStart="@+id/callbutton"
         android:layout_alignRight="@+id/callbutton"
         android:layout_alignEnd="@+id/callbutton"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/textbutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/pokedex_text"
+        app:fabSize="normal"
+        app:backgroundTint="@android:color/holo_blue_bright"
+        android:layout_marginRight="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_alignTop="@+id/callbutton"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:id="@+id/textbuttontext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="59dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Text"
+        android:gravity="center_horizontal"
+        android:layout_alignTop="@+id/textbutton"
+        android:layout_alignLeft="@+id/textbutton"
+        android:layout_alignStart="@+id/textbutton"
+        android:layout_alignRight="@+id/textbutton"
+        android:layout_alignEnd="@+id/textbutton"
         android:textColor="#000000"
         android:textStyle="bold"/>
 

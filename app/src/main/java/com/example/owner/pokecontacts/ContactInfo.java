@@ -27,26 +27,34 @@ public class ContactInfo extends AppCompatActivity
     public void doStuff()
     {
         Bundle contactBundle = this.getIntent().getExtras();
-        if (contactBundle != null)
-        {
-            final Android_Contact curr_contact = (Android_Contact)contactBundle.getSerializable("current_contact");
+        if (contactBundle != null) {
+            final Android_Contact curr_contact = (Android_Contact) contactBundle.getSerializable("current_contact");
 
             TextView contactName = (TextView) findViewById(R.id.conName);
             contactName.setText(curr_contact.getmName());
 
-            TextView contactPhone = (TextView)findViewById(R.id.conPhone);
+            TextView contactPhone = (TextView) findViewById(R.id.conPhone);
             contactPhone.setText(curr_contact.getmPhone());
 
+            //-----< Set up the click listener for the call button >-----
             FloatingActionButton callButton = (FloatingActionButton) findViewById(R.id.callbutton);
             callButton.setOnClickListener(new View.OnClickListener() {
                 @Override
-                public void onClick(View view)
-                {
+                public void onClick(View view) {
                     Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", curr_contact.getmPhone(), null));
+                    startActivity(intent);
+                }
+            });
+
+            //-----< Set up the click listener for the text button >-----
+            FloatingActionButton textButton = (FloatingActionButton) findViewById(R.id.textbutton);
+            textButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + curr_contact.getmPhone()));
                     startActivity(intent);
                 }
             });
         }
     }
-
 }
