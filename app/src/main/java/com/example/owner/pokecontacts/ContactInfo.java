@@ -10,8 +10,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
+import com.facebook.drawee.backends.pipeline.Fresco;
+import com.facebook.drawee.interfaces.DraweeController;
+import com.facebook.drawee.view.SimpleDraweeView;
+
+import java.util.HashMap;
+
 public class ContactInfo extends AppCompatActivity
 {
+    private HashMap<Integer, String> pokeList = new HashMap<Integer, String>();  //this hashmap will map random integers to their respective pokemon number for contact avatars
+
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
@@ -21,6 +29,7 @@ public class ContactInfo extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        setPokemon();
         doStuff();
     }
 
@@ -29,6 +38,23 @@ public class ContactInfo extends AppCompatActivity
         Bundle contactBundle = this.getIntent().getExtras();
         if (contactBundle != null) {
             final Android_Contact curr_contact = (Android_Contact) contactBundle.getSerializable("current_contact");
+
+            StringBuilder avatarString = new StringBuilder();
+            int pokedexNumber = curr_contact.getPokemonAvatarNumber();
+            String pokemonName = pokeList.get(pokedexNumber);
+            avatarString.append(pokemonName + ".gif");
+
+            SimpleDraweeView draweeView = (SimpleDraweeView)findViewById(R.id.gifView);
+            Uri uri = Uri.parse("asset:///3D/" + avatarString.toString());
+            DraweeController controller =
+                    Fresco.newDraweeControllerBuilder()
+                            .setUri(uri)
+                            .setAutoPlayAnimations(true)
+                            .build();
+
+            draweeView.setController(controller);
+
+            avatarString.setLength(0);     //clear the stringbuilder
 
             TextView contactName = (TextView) findViewById(R.id.conName);
             contactName.setText(curr_contact.getmName());
@@ -56,5 +82,17 @@ public class ContactInfo extends AppCompatActivity
                 }
             });
         }
+    }
+
+    public void setPokemon(){
+        pokeList.put(1, "bulbasaur");
+        pokeList.put(2, "ivysaur");
+        pokeList.put(3, "venusaur");
+        pokeList.put(4, "charmander");
+        pokeList.put(5, "charmeleon");
+        pokeList.put(6, "charizard");
+        pokeList.put(7, "squirtle");
+        pokeList.put(8, "wartortle");
+        pokeList.put(9, "blastoise");
     }
 }

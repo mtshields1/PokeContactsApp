@@ -79,7 +79,7 @@ public class PhoneBookAdapter extends BaseAdapter
         wv.setFocusableInTouchMode(false);*/ //this code is for non fresco gif usage
 
         SimpleDraweeView draweeView = (SimpleDraweeView)convertView.findViewById(R.id.my_image_view);
-        Uri uri = Uri.parse("asset:///" + avatarString.toString());
+        Uri uri = Uri.parse("asset:///sprite/" + avatarString.toString());
         DraweeController controller =
                 Fresco.newDraweeControllerBuilder()
                         .setUri(uri)
