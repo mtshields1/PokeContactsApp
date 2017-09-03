@@ -70,13 +70,52 @@
         android:textColor="#000000"
         android:textStyle="bold"/>
 
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/changeButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/pokeball"
+        app:fabSize="normal"
+        app:backgroundTint="@android:color/holo_purple"
+        android:layout_alignTop="@+id/callbutton"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/changebuttontext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="59dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:gravity="center_horizontal"
+        android:text="Change"
+        android:layout_alignTop="@+id/changeButton"
+        android:layout_alignLeft="@+id/changeButton"
+        android:layout_alignStart="@+id/changeButton"
+        android:layout_alignRight="@+id/changeButton"
+        android:layout_alignEnd="@+id/changeButton"
+        android:textColor="#000000"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/changebuttontext2"
+        android:layout_width="60dp"
+        android:layout_height="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:gravity="center_horizontal"
+        android:text="Pokemon"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_below="@+id/changebuttontext"
+        android:layout_centerHorizontal="true" />
+
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/gifView"
         android:layout_width="120dp"
         android:layout_height="120dp"
         android:scaleType="fitCenter"
         android:adjustViewBounds="true"
-        android:layout_below="@+id/linearLayout2"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="62dp"
         fresco:placeholderImage="@mipmap/retro_pokeball" />
