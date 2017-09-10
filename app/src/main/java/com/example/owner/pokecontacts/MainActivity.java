@@ -6,6 +6,7 @@ import android.provider.ContactsContract;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.webkit.WebView;
@@ -84,7 +85,7 @@ public class MainActivity extends Activity
         if (savedInstanceState != null)
         {
             super.onRestoreInstanceState(savedInstanceState);
-            HashMap<String, Integer> savedAvatarNums = (HashMap<String, Integer>) savedInstanceState.getSerializable("saveData");
+            //HashMap<String, Integer> savedAvatarNums = (HashMap<String, Integer>) savedInstanceState.getSerializable("saveData");
         }
         else
         {
@@ -245,7 +246,8 @@ public class MainActivity extends Activity
                     
                     if (savedAvatarNums.containsKey(number.replaceAll("\\D", "")))  //This contact has existed before. Get their pokedex number
                     {
-                        theContact.setAvatarNum(savedAvatarNums.get(number.replaceAll("\\D", "")));
+                        //theContact.setAvatarNum(savedAvatarNums.get(number.replaceAll("\\D", "")));
+                        theContact.changeAvatarNum(savedAvatarNums.get(number.replaceAll("\\D", "")));
                     }
                     else
                     {
@@ -296,53 +298,27 @@ public class MainActivity extends Activity
                 contactBundle.putSerializable("current_contact", curr_selected);
                 sendIntent.putExtras(contactBundle);
                 sendIntent.setClass(getApplicationContext(), ContactInfo.class);
-                startActivity(sendIntent);
-                //view.showContextMenu();
+
+                //----< This will return the result, in the form of the changed contact avatar (if the avatar was changed) >----
+                startActivityForResult(sendIntent, 1);
             }
         });
         initializeClickListeners();  //Initialize every clicklistener for the vertical alphabet
     }
 
-
-    @Override
-    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) 
+    public void onActivityResult(int requestCode, int resultCode, Intent data)
     {
-        super.onCreateContextMenu(menu, v, menuInfo);
-        if (v.getId() == R.id.listPhone){
-            AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
-            menu.setHeaderTitle("Options");
-            menu.add(0, v.getId(), 0, "Call");
-            menu.add(0, v.getId(), 0, "Text");
-            menu.add(0, v.getId(), 0, "Change Pokemon");
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1) {
+            if(resultCode == RESULT_OK)
+            {
+                final Android_Contact curr_contact = (Android_Contact) data.getSerializableExtra("changed_contact");
+                savedAvatarNums.put(curr_contact.getmPhone(), curr_contact.getPokemonAvatarNumber());
+                showContacts();
+                //TODO: may implement changing the view to go back to where this contact was selected. i.e. for now,
+                //TODO: if the user selects a D contact, showContacts will bring it back to the top of the contact list
+            }
         }
-    }
-
-    @Override
-    public boolean onContextItemSelected(MenuItem item)
-    {
-        if (item.getTitle() == "Call")
-        {
-            
-            //-----< The call function will display the number in the keypad so the user can decide to call or cancel >-----
-            //-----< This makes for a better user experience >-----
-            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", curr_selected.getmPhone(), null));
-            startActivity(intent);
-        }
-        else if (item.getTitle() == "Text")
-        {
-            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + curr_selected.getmPhone()));
-            startActivity(intent);
-        }
-        else if (item.getTitle() == "Change Pokemon")
-        {
-            //savedAvatarNums.put("17178842967", 1);
-            //showContacts();
-        }
-        else
-        {
-            return false;
-        }
-        return true;
     }
     
     public void initializeClickListeners()

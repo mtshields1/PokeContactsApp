@@ -71,7 +71,7 @@
         android:textStyle="bold"/>
 
     <android.support.design.widget.FloatingActionButton
-        android:id="@+id/changeButton"
+        android:id="@+id/changePokemonButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@mipmap/pokeball"
@@ -89,11 +89,11 @@
         android:inputType="textPersonName"
         android:gravity="center_horizontal"
         android:text="Change"
-        android:layout_alignTop="@+id/changeButton"
-        android:layout_alignLeft="@+id/changeButton"
-        android:layout_alignStart="@+id/changeButton"
-        android:layout_alignRight="@+id/changeButton"
-        android:layout_alignEnd="@+id/changeButton"
+        android:layout_alignTop="@+id/changePokemonButton"
+        android:layout_alignLeft="@+id/changePokemonButton"
+        android:layout_alignStart="@+id/changePokemonButton"
+        android:layout_alignRight="@+id/changePokemonButton"
+        android:layout_alignEnd="@+id/changePokemonButton"
         android:textColor="#000000"
         android:textStyle="bold"/>
 

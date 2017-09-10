@@ -65,4 +65,9 @@ public class Android_Contact implements Serializable
         }
     }
 
+    public void changeAvatarNum(int num)
+    {
+        pokemonAvatarNumber = num;
+    }
+
 }
