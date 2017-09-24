@@ -32,8 +32,8 @@ public class ContactInfo extends AppCompatActivity
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_contact_info);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        //Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        //setSupportActionBar(toolbar);
 
         setPokemon();
         displayContactInfo();

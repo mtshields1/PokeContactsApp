@@ -20,6 +20,7 @@
         <activity
             android:name=".ContactInfo"
             android:label="@string/title_activity_contact_info"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
