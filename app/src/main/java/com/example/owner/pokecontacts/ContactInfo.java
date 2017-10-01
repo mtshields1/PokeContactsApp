@@ -1,6 +1,9 @@
 package com.example.owner.pokecontacts;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.res.AssetFileDescriptor;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -18,6 +21,7 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
 import com.facebook.drawee.view.SimpleDraweeView;
 
+import java.io.InputStream;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 
@@ -80,6 +84,28 @@ public class ContactInfo extends AppCompatActivity
                 public void onClick(View view) {
                     registerForContextMenu(view);
                     view.showContextMenu();
+                }
+            });
+
+            //-----< Set up the click listener for the cry button >-----
+            FloatingActionButton cryButton = (FloatingActionButton) findViewById(R.id.crybutton);
+            cryButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    StringBuilder cryString = new StringBuilder();
+                    int pokedexNumber = curr_contact.getPokemonAvatarNumber();
+                    String pokemonName = pokeList.get(pokedexNumber);
+                    cryString.append(pokemonName + ".ogg");
+
+                    //-----< Set up the media player to play the sound file >-----
+                    MediaPlayer mp = new MediaPlayer();
+                    try {
+                        AssetFileDescriptor afd = getAssets().openFd("Cries/" + cryString.toString());
+                        mp.setDataSource(afd.getFileDescriptor(), afd.getStartOffset(), afd.getLength());
+                        mp.prepare();
+                        mp.start();
+                    }
+                    catch (Exception e){}
                 }
             });
         }

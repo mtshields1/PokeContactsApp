@@ -3,6 +3,7 @@ package com.example.owner.pokecontacts;
 import android.app.Activity;
 import android.content.ContentResolver;
 import android.provider.ContactsContract;
+import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;

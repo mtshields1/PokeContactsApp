@@ -13,18 +13,18 @@
         android:id="@+id/callbutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="144dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginStart="60dp"
         app:srcCompat="@mipmap/pokedex_sprite"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
         app:fabSize="normal"
-        app:backgroundTint="@android:color/holo_green_light"/>
+        app:backgroundTint="@android:color/holo_green_light"
+        android:layout_marginRight="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_below="@+id/contactView"
+        android:layout_toLeftOf="@+id/gifView"
+        android:layout_toStartOf="@+id/gifView"
+        android:layout_marginTop="74dp" />
 
     <TextView
-        android:id="@+id/editText3"
+        android:id="@+id/callbuttontext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="59dp"
@@ -109,6 +109,34 @@
         android:textStyle="bold"
         android:layout_below="@+id/changebuttontext"
         android:layout_centerHorizontal="true" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/crybutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/cry_sound"
+        app:fabSize="normal"
+        app:backgroundTint="@android:color/holo_orange_light"
+        android:layout_marginTop="35dp"
+        android:layout_below="@+id/changebuttontext2"
+        android:layout_alignLeft="@+id/callbuttontext"
+        android:layout_alignStart="@+id/callbuttontext" />
+
+    <TextView
+        android:id="@+id/crybuttontext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Cry"
+        android:gravity="center_horizontal"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_below="@+id/crybutton"
+        android:layout_alignLeft="@+id/crybutton"
+        android:layout_alignStart="@+id/crybutton"
+        android:layout_alignRight="@+id/crybutton"
+        android:layout_alignEnd="@+id/crybutton" />
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/gifView"
