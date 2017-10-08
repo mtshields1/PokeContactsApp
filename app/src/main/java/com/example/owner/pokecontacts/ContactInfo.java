@@ -15,7 +15,13 @@ import android.view.ContextMenu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.app.Dialog;
+import android.content.DialogInterface;
+import android.graphics.drawable.ColorDrawable;
+import android.view.Window;
+import android.widget.Button;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 import com.facebook.drawee.interfaces.DraweeController;
@@ -106,6 +112,29 @@ public class ContactInfo extends AppCompatActivity
                         mp.start();
                     }
                     catch (Exception e){}
+                }
+            });
+
+            //-----< Set up the click listener for the get type button >-----
+            FloatingActionButton typeButton = (FloatingActionButton) findViewById(R.id.typebutton);
+            typeButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    final Dialog settingsDialog = new Dialog(ContactInfo.this);
+                    settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+                    settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.popup_image, null));
+                    Button dismiss = (Button) settingsDialog.findViewById(R.id.closeButton);
+                    ImageView type1 = (ImageView) settingsDialog.findViewById(R.id.type_pure);
+                    type1.setImageResource(R.mipmap.fire);
+                    ImageView type2 = (ImageView) settingsDialog.findViewById(R.id.type_secondary);
+                    type2.setImageResource(R.mipmap.flying);
+                    dismiss.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v){
+                            settingsDialog.dismiss();
+                        }
+                    });
+                    settingsDialog.show();
                 }
             });
         }

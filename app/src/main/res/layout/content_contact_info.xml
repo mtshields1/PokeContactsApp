@@ -119,8 +119,8 @@
         app:backgroundTint="@android:color/holo_orange_light"
         android:layout_marginTop="35dp"
         android:layout_below="@+id/changebuttontext2"
-        android:layout_alignLeft="@+id/callbuttontext"
-        android:layout_alignStart="@+id/callbuttontext" />
+        android:layout_toLeftOf="@+id/changebuttontext"
+        android:layout_toStartOf="@+id/changebuttontext" />
 
     <TextView
         android:id="@+id/crybuttontext"
@@ -137,6 +137,33 @@
         android:layout_alignStart="@+id/crybutton"
         android:layout_alignRight="@+id/crybutton"
         android:layout_alignEnd="@+id/crybutton" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/typebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/colorless_energy"
+        app:fabSize="normal"
+        app:backgroundTint="@android:color/holo_red_light"
+        android:layout_alignTop="@+id/crybutton"
+        android:layout_toRightOf="@+id/changebuttontext"
+        android:layout_toEndOf="@+id/changebuttontext" />
+
+    <TextView
+        android:id="@+id/typebuttontext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Get Type"
+        android:gravity="center_horizontal"
+        android:textColor="#000000"
+        android:textStyle="bold"
+        android:layout_below="@+id/typebutton"
+        android:layout_alignLeft="@+id/typebutton"
+        android:layout_alignStart="@+id/typebutton"
+        android:layout_alignRight="@+id/typebutton"
+        android:layout_alignEnd="@+id/typebutton" />
 
     <com.facebook.drawee.view.SimpleDraweeView
         android:id="@+id/gifView"
