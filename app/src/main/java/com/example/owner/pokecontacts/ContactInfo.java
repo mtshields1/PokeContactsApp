@@ -35,6 +35,7 @@ public class ContactInfo extends AppCompatActivity
 {
     protected Android_Contact current_contact;
     private LinkedHashMap<Integer, String> pokeList = new LinkedHashMap<Integer, String>();  //this hashmap will map random integers to their respective pokemon number for contact avatars
+    private LinkedHashMap<Integer, String> typeList = new LinkedHashMap<>();  //this hashmap will keep the typing for each pokemon
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -46,6 +47,7 @@ public class ContactInfo extends AppCompatActivity
         //setSupportActionBar(toolbar);
 
         setPokemon();
+        setTypes();
         displayContactInfo();
     }
 
@@ -120,23 +122,106 @@ public class ContactInfo extends AppCompatActivity
             typeButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    final Dialog settingsDialog = new Dialog(ContactInfo.this);
-                    settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-                    settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.popup_image, null));
-                    Button dismiss = (Button) settingsDialog.findViewById(R.id.closeButton);
-                    ImageView type1 = (ImageView) settingsDialog.findViewById(R.id.type_pure);
-                    type1.setImageResource(R.mipmap.fire);
-                    ImageView type2 = (ImageView) settingsDialog.findViewById(R.id.type_secondary);
-                    type2.setImageResource(R.mipmap.flying);
-                    dismiss.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v){
-                            settingsDialog.dismiss();
-                        }
-                    });
-                    settingsDialog.show();
+                    getTypes();
                 }
             });
+        }
+    }
+
+    public void getTypes() {
+        final Dialog settingsDialog = new Dialog(ContactInfo.this);
+        settingsDialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
+        settingsDialog.setContentView(getLayoutInflater().inflate(R.layout.popup_image, null));
+        Button dismiss = (Button) settingsDialog.findViewById(R.id.closeButton);
+        String typeString = typeList.get(current_contact.getPokemonAvatarNumber());
+        ImageView type1 = (ImageView) settingsDialog.findViewById(R.id.type_pure);
+        ImageView type2 = (ImageView) settingsDialog.findViewById(R.id.type_secondary);
+        setTypeImages(type1, type2, typeString);
+        dismiss.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v){
+                settingsDialog.dismiss();
+            }
+        });
+        settingsDialog.show();
+    }
+
+    public void setTypeImages(ImageView type1, ImageView type2, String typeString) {
+        String[] splitTypes = typeString.split(",");
+        for (int ind = 0; ind < splitTypes.length; ind++){
+            if (splitTypes[ind].equals("none")) { break; }
+            else if (splitTypes[ind].equals("bug")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.bug); }
+                else { type2.setImageResource(R.mipmap.bug); }
+            }
+            else if (splitTypes[ind].equals("dark")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.dark); }
+                else { type2.setImageResource(R.mipmap.dark); }
+            }
+            else if (splitTypes[ind].equals("dragon")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.dragon); }
+                else { type2.setImageResource(R.mipmap.dragon); }
+            }
+            else if (splitTypes[ind].equals("electric")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.electric); }
+                else { type2.setImageResource(R.mipmap.electric); }
+            }
+            else if (splitTypes[ind].equals("fairy")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.fairy); }
+                else { type2.setImageResource(R.mipmap.fairy); }
+            }
+            else if (splitTypes[ind].equals("fight")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.fight); }
+                else { type2.setImageResource(R.mipmap.fight); }
+            }
+            else if (splitTypes[ind].equals("fire")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.fire); }
+                else { type2.setImageResource(R.mipmap.fire); }
+            }
+            else if (splitTypes[ind].equals("flying")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.flying); }
+                else { type2.setImageResource(R.mipmap.flying); }
+            }
+            else if (splitTypes[ind].equals("ghost")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.ghost); }
+                else { type2.setImageResource(R.mipmap.ghost); }
+            }
+            else if (splitTypes[ind].equals("grass")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.grass); }
+                else { type2.setImageResource(R.mipmap.grass); }
+            }
+            else if (splitTypes[ind].equals("ground")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.ground); }
+                else { type2.setImageResource(R.mipmap.ground); }
+            }
+            else if (splitTypes[ind].equals("ice")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.ice); }
+                else { type2.setImageResource(R.mipmap.ice); }
+            }
+            else if (splitTypes[ind].equals("normal")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.normal); }
+                else { type2.setImageResource(R.mipmap.normal); }
+            }
+            else if (splitTypes[ind].equals("poison")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.poison); }
+                else { type2.setImageResource(R.mipmap.poison); }
+            }
+            else if (splitTypes[ind].equals("psychic")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.psychic); }
+                else { type2.setImageResource(R.mipmap.psychic); }
+            }
+            else if (splitTypes[ind].equals("rock")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.rock); }
+                else { type2.setImageResource(R.mipmap.rock); }
+            }
+            else if (splitTypes[ind].equals("steel")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.steel); }
+                else { type2.setImageResource(R.mipmap.steel); }
+            }
+            else if (splitTypes[ind].equals("water")) {
+                if (ind == 0) { type1.setImageResource(R.mipmap.water); }
+                else { type2.setImageResource(R.mipmap.water); }
+            }
         }
     }
 
@@ -237,5 +322,17 @@ public class ContactInfo extends AppCompatActivity
         pokeList.put(7, "squirtle");
         pokeList.put(8, "wartortle");
         pokeList.put(9, "blastoise");
+    }
+
+    public void setTypes() {
+        typeList.put(1, "grass,poison");
+        typeList.put(2, "grass,poison");
+        typeList.put(3, "grass,poison");
+        typeList.put(4, "fire,none");
+        typeList.put(5, "fire,none");
+        typeList.put(6, "fire,flying");
+        typeList.put(7, "water,none");
+        typeList.put(8, "water,none");
+        typeList.put(9, "water,none");
     }
 }
