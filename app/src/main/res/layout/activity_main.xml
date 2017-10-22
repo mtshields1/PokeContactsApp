@@ -4,7 +4,7 @@
     android:id="@+id/activity_main"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@mipmap/mt_silver"
+    android:background="@mipmap/poke_center_floor"
     tools:context="com.example.owner.pokecontacts.MainActivity"
     android:weightSum="1">
 
