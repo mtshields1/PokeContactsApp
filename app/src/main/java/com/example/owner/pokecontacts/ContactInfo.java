@@ -295,6 +295,70 @@ public class ContactInfo extends AppCompatActivity
         {
             current_contact.changeAvatarNum(9);
         }
+        else if (item.getTitle() == "caterpie")
+        {
+            current_contact.changeAvatarNum(10);
+        }
+        else if (item.getTitle() == "metapod")
+        {
+            current_contact.changeAvatarNum(11);
+        }
+        else if (item.getTitle() == "butterfree")
+        {
+            current_contact.changeAvatarNum(12);
+        }
+        else if (item.getTitle() == "weedle")
+        {
+            current_contact.changeAvatarNum(13);
+        }
+        else if (item.getTitle() == "kakuna")
+        {
+            current_contact.changeAvatarNum(14);
+        }
+        else if (item.getTitle() == "beedrill")
+        {
+            current_contact.changeAvatarNum(15);
+        }
+        else if (item.getTitle() == "pidgey")
+        {
+            current_contact.changeAvatarNum(16);
+        }
+        else if (item.getTitle() == "pidgeotto")
+        {
+            current_contact.changeAvatarNum(17);
+        }
+        else if (item.getTitle() == "pidgeot")
+        {
+            current_contact.changeAvatarNum(18);
+        }
+        else if (item.getTitle() == "rattata")
+        {
+            current_contact.changeAvatarNum(19);
+        }
+        else if (item.getTitle() == "raticate")
+        {
+            current_contact.changeAvatarNum(20);
+        }
+        else if (item.getTitle() == "spearow")
+        {
+            current_contact.changeAvatarNum(21);
+        }
+        else if (item.getTitle() == "fearow")
+        {
+            current_contact.changeAvatarNum(22);
+        }
+        else if (item.getTitle() == "ekans")
+        {
+            current_contact.changeAvatarNum(23);
+        }
+        else if (item.getTitle() == "arbok")
+        {
+            current_contact.changeAvatarNum(24);
+        }
+        else if (item.getTitle() == "pikachu")
+        {
+            current_contact.changeAvatarNum(25);
+        }
         else
         {
             return false;
@@ -322,6 +386,22 @@ public class ContactInfo extends AppCompatActivity
         pokeList.put(7, "squirtle");
         pokeList.put(8, "wartortle");
         pokeList.put(9, "blastoise");
+        pokeList.put(10, "caterpie");
+        pokeList.put(11, "metapod");
+        pokeList.put(12, "butterfree");
+        pokeList.put(13, "weedle");
+        pokeList.put(14, "kakuna");
+        pokeList.put(15, "beedrill");
+        pokeList.put(16, "pidgey");
+        pokeList.put(17, "pidgeotto");
+        pokeList.put(18, "pidgeot");
+        pokeList.put(19, "rattata");
+        pokeList.put(20, "raticate");
+        pokeList.put(21, "spearow");
+        pokeList.put(22, "fearow");
+        pokeList.put(23, "ekans");
+        pokeList.put(24, "arbok");
+        pokeList.put(25, "pikachu");
     }
 
     public void setTypes() {
@@ -334,5 +414,21 @@ public class ContactInfo extends AppCompatActivity
         typeList.put(7, "water,none");
         typeList.put(8, "water,none");
         typeList.put(9, "water,none");
+        typeList.put(10, "bug,none");
+        typeList.put(11, "bug,none");
+        typeList.put(12, "bug,flying");
+        typeList.put(13, "bug,poison");
+        typeList.put(14, "bug,poison");
+        typeList.put(15, "bug,poison");
+        typeList.put(16, "normal,flying");
+        typeList.put(17, "normal,flying");
+        typeList.put(18, "normal,flying");
+        typeList.put(19, "normal,none");
+        typeList.put(20, "normal,none");
+        typeList.put(21, "normal,flying");
+        typeList.put(22, "normal,flying");
+        typeList.put(23, "poison,none");
+        typeList.put(24, "poison,none");
+        typeList.put(25, "electric,none");
     }
 }

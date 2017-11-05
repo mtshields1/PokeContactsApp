@@ -109,5 +109,21 @@ public class PhoneBookAdapter extends BaseAdapter
         pokeList.put(7, "squirtle");
         pokeList.put(8, "wartortle");
         pokeList.put(9, "blastoise");
+        pokeList.put(10, "caterpie");
+        pokeList.put(11, "metapod");
+        pokeList.put(12, "butterfree");
+        pokeList.put(13, "weedle");
+        pokeList.put(14, "kakuna");
+        pokeList.put(15, "beedrill");
+        pokeList.put(16, "pidgey");
+        pokeList.put(17, "pidgeotto");
+        pokeList.put(18, "pidgeot");
+        pokeList.put(19, "rattata");
+        pokeList.put(20, "raticate");
+        pokeList.put(21, "spearow");
+        pokeList.put(22, "fearow");
+        pokeList.put(23, "ekans");
+        pokeList.put(24, "arbok");
+        pokeList.put(25, "pikachu");
     }
 }
