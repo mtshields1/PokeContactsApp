@@ -125,5 +125,30 @@ public class PhoneBookAdapter extends BaseAdapter
         pokeList.put(23, "ekans");
         pokeList.put(24, "arbok");
         pokeList.put(25, "pikachu");
+        pokeList.put(26, "raichu");
+        pokeList.put(27, "sandshrew");
+        pokeList.put(28, "sandslash");
+        pokeList.put(29, "nidoran-female");
+        pokeList.put(30, "nidorina");
+        pokeList.put(31, "nidoqueen");
+        pokeList.put(32, "nidoran-male");
+        pokeList.put(33, "nidorino");
+        pokeList.put(34, "nidoking");
+        pokeList.put(35, "clefairy");
+        pokeList.put(36, "clefable");
+        pokeList.put(37, "vulpix");
+        pokeList.put(38, "ninetales");
+        pokeList.put(39, "jigglypuff");
+        pokeList.put(40, "wigglytuff");
+        pokeList.put(41, "zubat");
+        pokeList.put(42, "golbat");
+        pokeList.put(43, "oddish");
+        pokeList.put(44, "gloom");
+        pokeList.put(45, "vileplume");
+        pokeList.put(46, "paras");
+        pokeList.put(47, "parasect");
+        pokeList.put(48, "venonat");
+        pokeList.put(49, "venomoth");
+        pokeList.put(50, "diglett");
     }
 }

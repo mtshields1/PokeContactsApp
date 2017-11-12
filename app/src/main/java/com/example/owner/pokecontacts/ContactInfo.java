@@ -359,6 +359,106 @@ public class ContactInfo extends AppCompatActivity
         {
             current_contact.changeAvatarNum(25);
         }
+        else if (item.getTitle() == "raichu")
+        {
+            current_contact.changeAvatarNum(26);
+        }
+        else if (item.getTitle() == "sandshrew")
+        {
+            current_contact.changeAvatarNum(27);
+        }
+        else if (item.getTitle() == "sandslash")
+        {
+            current_contact.changeAvatarNum(28);
+        }
+        else if (item.getTitle() == "nidoran-female")
+        {
+            current_contact.changeAvatarNum(29);
+        }
+        else if (item.getTitle() == "nidorina")
+        {
+            current_contact.changeAvatarNum(30);
+        }
+        else if (item.getTitle() == "nidoqueen")
+        {
+            current_contact.changeAvatarNum(31);
+        }
+        else if (item.getTitle() == "nidoran-male")
+        {
+            current_contact.changeAvatarNum(32);
+        }
+        else if (item.getTitle() == "nidorino")
+        {
+            current_contact.changeAvatarNum(33);
+        }
+        else if (item.getTitle() == "nidoking")
+        {
+            current_contact.changeAvatarNum(34);
+        }
+        else if (item.getTitle() == "clefairy")
+        {
+            current_contact.changeAvatarNum(35);
+        }
+        else if (item.getTitle() == "clefable")
+        {
+            current_contact.changeAvatarNum(36);
+        }
+        else if (item.getTitle() == "vulpix")
+        {
+            current_contact.changeAvatarNum(37);
+        }
+        else if (item.getTitle() == "ninetales")
+        {
+            current_contact.changeAvatarNum(38);
+        }
+        else if (item.getTitle() == "jigglypuff")
+        {
+            current_contact.changeAvatarNum(39);
+        }
+        else if (item.getTitle() == "wigglytuff")
+        {
+            current_contact.changeAvatarNum(40);
+        }
+        else if (item.getTitle() == "zubat")
+        {
+            current_contact.changeAvatarNum(41);
+        }
+        else if (item.getTitle() == "golbat")
+        {
+            current_contact.changeAvatarNum(42);
+        }
+        else if (item.getTitle() == "oddish")
+        {
+            current_contact.changeAvatarNum(43);
+        }
+        else if (item.getTitle() == "gloom")
+        {
+            current_contact.changeAvatarNum(44);
+        }
+        else if (item.getTitle() == "vileplume")
+        {
+            current_contact.changeAvatarNum(45);
+        }
+        else if (item.getTitle() == "paras")
+        {
+            current_contact.changeAvatarNum(46);
+        }
+        else if (item.getTitle() == "parasect")
+        {
+            current_contact.changeAvatarNum(47);
+        }
+        else if (item.getTitle() == "venonat")
+        {
+            current_contact.changeAvatarNum(48);
+        }
+        else if (item.getTitle() == "venomoth")
+        {
+            current_contact.changeAvatarNum(49);
+        }
+        else if (item.getTitle() == "diglett")
+        {
+            current_contact.changeAvatarNum(50);
+        }
         else
         {
             return false;
@@ -402,6 +502,31 @@ public class ContactInfo extends AppCompatActivity
         pokeList.put(23, "ekans");
         pokeList.put(24, "arbok");
         pokeList.put(25, "pikachu");
+        pokeList.put(26, "raichu");
+        pokeList.put(27, "sandshrew");
+        pokeList.put(28, "sandslash");
+        pokeList.put(29, "nidoran-female");
+        pokeList.put(30, "nidorina");
+        pokeList.put(31, "nidoqueen");
+        pokeList.put(32, "nidoran-male");
+        pokeList.put(33, "nidorino");
+        pokeList.put(34, "nidoking");
+        pokeList.put(35, "clefairy");
+        pokeList.put(36, "clefable");
+        pokeList.put(37, "vulpix");
+        pokeList.put(38, "ninetales");
+        pokeList.put(39, "jigglypuff");
+        pokeList.put(40, "wigglytuff");
+        pokeList.put(41, "zubat");
+        pokeList.put(42, "golbat");
+        pokeList.put(43, "oddish");
+        pokeList.put(44, "gloom");
+        pokeList.put(45, "vileplume");
+        pokeList.put(46, "paras");
+        pokeList.put(47, "parasect");
+        pokeList.put(48, "venonat");
+        pokeList.put(49, "venomoth");
+        pokeList.put(50, "diglett");
     }
 
     public void setTypes() {
@@ -430,5 +555,30 @@ public class ContactInfo extends AppCompatActivity
         typeList.put(23, "poison,none");
         typeList.put(24, "poison,none");
         typeList.put(25, "electric,none");
+        typeList.put(26, "electric,none");
+        typeList.put(27, "ground,none");
+        typeList.put(28, "ground,none");
+        typeList.put(29, "poison,none");
+        typeList.put(30, "poison,none");
+        typeList.put(31, "poison,ground");
+        typeList.put(32, "poison,none");
+        typeList.put(33, "poison,none");
+        typeList.put(34, "poison,ground");
+        typeList.put(35, "fairy,none");
+        typeList.put(36, "fairy,none");
+        typeList.put(37, "fire,none");
+        typeList.put(38, "fire,none");
+        typeList.put(39, "normal,fairy");
+        typeList.put(40, "normal,fairy");
+        typeList.put(41, "poison,flying");
+        typeList.put(42, "poison,flying");
+        typeList.put(43, "grass,poison");
+        typeList.put(44, "grass,poison");
+        typeList.put(45, "grass,poison");
+        typeList.put(46, "bug,grass");
+        typeList.put(47, "bug,grass");
+        typeList.put(48, "bug,poison");
+        typeList.put(49, "bug,poison");
+        typeList.put(50, "ground,none");
     }
 }
