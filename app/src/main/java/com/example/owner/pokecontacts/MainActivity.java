@@ -46,7 +46,7 @@ public class MainActivity extends Activity
     protected static final HashMap<String, Integer> savedAvatarNums = new HashMap<String, Integer>(); //For saving contact's avatars. Key will be contact phone number, value will be pokedex number
     private Random rand = new Random();   //for getting random pokemon avatar outcomes at initialization
     private int low = 1;    //minimum pokedex number for random seed
-    private int high = 51;   //maximum pokedex number (exclusive) for random seed. This should be 1 higher than maximum seed number
+    private int high = 76;   //maximum pokedex number (exclusive) for random seed. This should be 1 higher than maximum seed number
     //The following variables are each for each letter's clicklistener in the vertical alphabet at left
     private TextView clickA;
     private TextView clickB;

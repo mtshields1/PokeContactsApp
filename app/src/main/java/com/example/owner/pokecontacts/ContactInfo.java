@@ -170,7 +170,7 @@ public class ContactInfo extends AppCompatActivity
                 if (ind == 0) { type1.setImageResource(R.mipmap.fairy); }
                 else { type2.setImageResource(R.mipmap.fairy); }
             }
-            else if (splitTypes[ind].equals("fight")) {
+            else if (splitTypes[ind].equals("fighting")) {
                 if (ind == 0) { type1.setImageResource(R.mipmap.fight); }
                 else { type2.setImageResource(R.mipmap.fight); }
             }
@@ -459,6 +459,106 @@ public class ContactInfo extends AppCompatActivity
         {
             current_contact.changeAvatarNum(50);
         }
+        else if (item.getTitle() == "dugtrio")
+        {
+            current_contact.changeAvatarNum(51);
+        }
+        else if (item.getTitle() == "meowth")
+        {
+            current_contact.changeAvatarNum(52);
+        }
+        else if (item.getTitle() == "persian")
+        {
+            current_contact.changeAvatarNum(53);
+        }
+        else if (item.getTitle() == "psyduck")
+        {
+            current_contact.changeAvatarNum(54);
+        }
+        else if (item.getTitle() == "golduck")
+        {
+            current_contact.changeAvatarNum(55);
+        }
+        else if (item.getTitle() == "mankey")
+        {
+            current_contact.changeAvatarNum(56);
+        }
+        else if (item.getTitle() == "primeape")
+        {
+            current_contact.changeAvatarNum(57);
+        }
+        else if (item.getTitle() == "growlithe")
+        {
+            current_contact.changeAvatarNum(58);
+        }
+        else if (item.getTitle() == "arcanine")
+        {
+            current_contact.changeAvatarNum(59);
+        }
+        else if (item.getTitle() == "poliwag")
+        {
+            current_contact.changeAvatarNum(60);
+        }
+        else if (item.getTitle() == "poliwhirl")
+        {
+            current_contact.changeAvatarNum(61);
+        }
+        else if (item.getTitle() == "poliwrath")
+        {
+            current_contact.changeAvatarNum(62);
+        }
+        else if (item.getTitle() == "abra")
+        {
+            current_contact.changeAvatarNum(63);
+        }
+        else if (item.getTitle() == "kadabra")
+        {
+            current_contact.changeAvatarNum(64);
+        }
+        else if (item.getTitle() == "alakazam")
+        {
+            current_contact.changeAvatarNum(65);
+        }
+        else if (item.getTitle() == "machop")
+        {
+            current_contact.changeAvatarNum(66);
+        }
+        else if (item.getTitle() == "machoke")
+        {
+            current_contact.changeAvatarNum(67);
+        }
+        else if (item.getTitle() == "machamp")
+        {
+            current_contact.changeAvatarNum(68);
+        }
+        else if (item.getTitle() == "bellsprout")
+        {
+            current_contact.changeAvatarNum(69);
+        }
+        else if (item.getTitle() == "weepinbell")
+        {
+            current_contact.changeAvatarNum(70);
+        }
+        else if (item.getTitle() == "victreebel")
+        {
+            current_contact.changeAvatarNum(71);
+        }
+        else if (item.getTitle() == "tentacool")
+        {
+            current_contact.changeAvatarNum(72);
+        }
+        else if (item.getTitle() == "tentacruel")
+        {
+            current_contact.changeAvatarNum(73);
+        }
+        else if (item.getTitle() == "geodude")
+        {
+            current_contact.changeAvatarNum(74);
+        }
+        else if (item.getTitle() == "graveler")
+        {
+            current_contact.changeAvatarNum(75);
+        }
         else
         {
             return false;
@@ -527,6 +627,31 @@ public class ContactInfo extends AppCompatActivity
         pokeList.put(48, "venonat");
         pokeList.put(49, "venomoth");
         pokeList.put(50, "diglett");
+        pokeList.put(51, "dugtrio");
+        pokeList.put(52, "meowth");
+        pokeList.put(53, "persian");
+        pokeList.put(54, "psyduck");
+        pokeList.put(55, "golduck");
+        pokeList.put(56, "mankey");
+        pokeList.put(57, "primeape");
+        pokeList.put(58, "growlithe");
+        pokeList.put(59, "arcanine");
+        pokeList.put(60, "poliwag");
+        pokeList.put(61, "poliwhirl");
+        pokeList.put(62, "poliwrath");
+        pokeList.put(63, "abra");
+        pokeList.put(64, "kadabra");
+        pokeList.put(65, "alakazam");
+        pokeList.put(66, "machop");
+        pokeList.put(67, "machoke");
+        pokeList.put(68, "machamp");
+        pokeList.put(69, "bellsprout");
+        pokeList.put(70, "weepinbell");
+        pokeList.put(71, "victreebel");
+        pokeList.put(72, "tentacool");
+        pokeList.put(73, "tentacruel");
+        pokeList.put(74, "geodude");
+        pokeList.put(75, "graveler");
     }
 
     public void setTypes() {
@@ -580,5 +705,30 @@ public class ContactInfo extends AppCompatActivity
         typeList.put(48, "bug,poison");
         typeList.put(49, "bug,poison");
         typeList.put(50, "ground,none");
+        typeList.put(51, "ground,none");
+        typeList.put(52, "normal,none");
+        typeList.put(53, "normal,none");
+        typeList.put(54, "water,none");
+        typeList.put(55, "water,none");
+        typeList.put(56, "fighting,none");
+        typeList.put(57, "fighting,none");
+        typeList.put(58, "fire,none");
+        typeList.put(59, "fire,none");
+        typeList.put(60, "water,none");
+        typeList.put(61, "water,none");
+        typeList.put(62, "water,fighting");
+        typeList.put(63, "psychic,none");
+        typeList.put(64, "psychic,none");
+        typeList.put(65, "psychic,none");
+        typeList.put(66, "fighting,none");
+        typeList.put(67, "fighting,none");
+        typeList.put(68, "fighting,none");
+        typeList.put(69, "grass,poison");
+        typeList.put(70, "grass,poison");
+        typeList.put(71, "grass,poison");
+        typeList.put(72, "water,poison");
+        typeList.put(73, "water,poison");
+        typeList.put(74, "rock,ground");
+        typeList.put(75, "rock,ground");
     }
 }

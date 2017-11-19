@@ -150,5 +150,30 @@ public class PhoneBookAdapter extends BaseAdapter
         pokeList.put(48, "venonat");
         pokeList.put(49, "venomoth");
         pokeList.put(50, "diglett");
+        pokeList.put(51, "dugtrio");
+        pokeList.put(52, "meowth");
+        pokeList.put(53, "persian");
+        pokeList.put(54, "psyduck");
+        pokeList.put(55, "golduck");
+        pokeList.put(56, "mankey");
+        pokeList.put(57, "primeape");
+        pokeList.put(58, "growlithe");
+        pokeList.put(59, "arcanine");
+        pokeList.put(60, "poliwag");
+        pokeList.put(61, "poliwhirl");
+        pokeList.put(62, "poliwrath");
+        pokeList.put(63, "abra");
+        pokeList.put(64, "kadabra");
+        pokeList.put(65, "alakazam");
+        pokeList.put(66, "machop");
+        pokeList.put(67, "machoke");
+        pokeList.put(68, "machamp");
+        pokeList.put(69, "bellsprout");
+        pokeList.put(70, "weepinbell");
+        pokeList.put(71, "victreebel");
+        pokeList.put(72, "tentacool");
+        pokeList.put(73, "tentacruel");
+        pokeList.put(74, "geodude");
+        pokeList.put(75, "graveler");
     }
 }
