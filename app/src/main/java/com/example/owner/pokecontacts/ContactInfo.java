@@ -559,6 +559,106 @@ public class ContactInfo extends AppCompatActivity
         {
             current_contact.changeAvatarNum(75);
         }
+        else if (item.getTitle() == "golem")
+        {
+            current_contact.changeAvatarNum(76);
+        }
+        else if (item.getTitle() == "ponyta")
+        {
+            current_contact.changeAvatarNum(77);
+        }
+        else if (item.getTitle() == "rapidash")
+        {
+            current_contact.changeAvatarNum(78);
+        }
+        else if (item.getTitle() == "slowpoke")
+        {
+            current_contact.changeAvatarNum(79);
+        }
+        else if (item.getTitle() == "slowbro")
+        {
+            current_contact.changeAvatarNum(80);
+        }
+        else if (item.getTitle() == "magnemite")
+        {
+            current_contact.changeAvatarNum(81);
+        }
+        else if (item.getTitle() == "magneton")
+        {
+            current_contact.changeAvatarNum(82);
+        }
+        else if (item.getTitle() == "farfetch'd")
+        {
+            current_contact.changeAvatarNum(83);
+        }
+        else if (item.getTitle() == "doduo")
+        {
+            current_contact.changeAvatarNum(84);
+        }
+        else if (item.getTitle() == "dodrio")
+        {
+            current_contact.changeAvatarNum(85);
+        }
+        else if (item.getTitle() == "seel")
+        {
+            current_contact.changeAvatarNum(86);
+        }
+        else if (item.getTitle() == "dewgong")
+        {
+            current_contact.changeAvatarNum(87);
+        }
+        else if (item.getTitle() == "grimer")
+        {
+            current_contact.changeAvatarNum(88);
+        }
+        else if (item.getTitle() == "muk")
+        {
+            current_contact.changeAvatarNum(89);
+        }
+        else if (item.getTitle() == "shellder")
+        {
+            current_contact.changeAvatarNum(90);
+        }
+        else if (item.getTitle() == "cloyster")
+        {
+            current_contact.changeAvatarNum(91);
+        }
+        else if (item.getTitle() == "gastly")
+        {
+            current_contact.changeAvatarNum(92);
+        }
+        else if (item.getTitle() == "haunter")
+        {
+            current_contact.changeAvatarNum(93);
+        }
+        else if (item.getTitle() == "gengar")
+        {
+            current_contact.changeAvatarNum(94);
+        }
+        else if (item.getTitle() == "onix")
+        {
+            current_contact.changeAvatarNum(95);
+        }
+        else if (item.getTitle() == "drowzee")
+        {
+            current_contact.changeAvatarNum(96);
+        }
+        else if (item.getTitle() == "hypno")
+        {
+            current_contact.changeAvatarNum(97);
+        }
+        else if (item.getTitle() == "krabby")
+        {
+            current_contact.changeAvatarNum(98);
+        }
+        else if (item.getTitle() == "kingler")
+        {
+            current_contact.changeAvatarNum(99);
+        }
+        else if (item.getTitle() == "voltorb")
+        {
+            current_contact.changeAvatarNum(100);
+        }
         else
         {
             return false;
@@ -652,6 +752,31 @@ public class ContactInfo extends AppCompatActivity
         pokeList.put(73, "tentacruel");
         pokeList.put(74, "geodude");
         pokeList.put(75, "graveler");
+        pokeList.put(76, "golem");
+        pokeList.put(77, "ponyta");
+        pokeList.put(78, "rapidash");
+        pokeList.put(79, "slowpoke");
+        pokeList.put(80, "slowbro");
+        pokeList.put(81, "magnemite");
+        pokeList.put(82, "magneton");
+        pokeList.put(83, "farfetch'd");
+        pokeList.put(84, "doduo");
+        pokeList.put(85, "dodrio");
+        pokeList.put(86, "seel");
+        pokeList.put(87, "dewgong");
+        pokeList.put(88, "grimer");
+        pokeList.put(89, "muk");
+        pokeList.put(90, "shellder");
+        pokeList.put(91, "cloyster");
+        pokeList.put(92, "gastly");
+        pokeList.put(93, "haunter");
+        pokeList.put(94, "gengar");
+        pokeList.put(95, "onix");
+        pokeList.put(96, "drowzee");
+        pokeList.put(97, "hypno");
+        pokeList.put(98, "krabby");
+        pokeList.put(99, "kingler");
+        pokeList.put(100, "voltorb");
     }
 
     public void setTypes() {
@@ -730,5 +855,30 @@ public class ContactInfo extends AppCompatActivity
         typeList.put(73, "water,poison");
         typeList.put(74, "rock,ground");
         typeList.put(75, "rock,ground");
+        typeList.put(76, "rock,ground");
+        typeList.put(77, "fire,none");
+        typeList.put(78, "fire,none");
+        typeList.put(79, "water,psychic");
+        typeList.put(80, "water,psychic");
+        typeList.put(81, "electric,steel");
+        typeList.put(82, "electric,steel");
+        typeList.put(83, "normal,flying");
+        typeList.put(84, "normal,flying");
+        typeList.put(85, "normal,flying");
+        typeList.put(86, "water,none");
+        typeList.put(87, "water,ice");
+        typeList.put(88, "poison,none");
+        typeList.put(89, "poison,none");
+        typeList.put(90, "water,none");
+        typeList.put(91, "water,ice");
+        typeList.put(92, "ghost,poison");
+        typeList.put(93, "ghost,poison");
+        typeList.put(94, "ghost,poison");
+        typeList.put(95, "rock,ground");
+        typeList.put(96, "psychic,none");
+        typeList.put(97, "psychic,none");
+        typeList.put(98, "water,none");
+        typeList.put(99, "water,none");
+        typeList.put(100, "electric,none");
     }
 }

@@ -175,5 +175,30 @@ public class PhoneBookAdapter extends BaseAdapter
         pokeList.put(73, "tentacruel");
         pokeList.put(74, "geodude");
         pokeList.put(75, "graveler");
+        pokeList.put(76, "golem");
+        pokeList.put(77, "ponyta");
+        pokeList.put(78, "rapidash");
+        pokeList.put(79, "slowpoke");
+        pokeList.put(80, "slowbro");
+        pokeList.put(81, "magnemite");
+        pokeList.put(82, "magneton");
+        pokeList.put(83, "farfetch'd");
+        pokeList.put(84, "doduo");
+        pokeList.put(85, "dodrio");
+        pokeList.put(86, "seel");
+        pokeList.put(87, "dewgong");
+        pokeList.put(88, "grimer");
+        pokeList.put(89, "muk");
+        pokeList.put(90, "shellder");
+        pokeList.put(91, "cloyster");
+        pokeList.put(92, "gastly");
+        pokeList.put(93, "haunter");
+        pokeList.put(94, "gengar");
+        pokeList.put(95, "onix");
+        pokeList.put(96, "drowzee");
+        pokeList.put(97, "hypno");
+        pokeList.put(98, "krabby");
+        pokeList.put(99, "kingler");
+        pokeList.put(100, "voltorb");
     }
 }
