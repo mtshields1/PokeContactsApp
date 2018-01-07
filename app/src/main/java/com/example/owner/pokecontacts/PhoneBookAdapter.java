@@ -200,5 +200,30 @@ public class PhoneBookAdapter extends BaseAdapter
         pokeList.put(98, "krabby");
         pokeList.put(99, "kingler");
         pokeList.put(100, "voltorb");
+        pokeList.put(101, "electrode");
+        pokeList.put(102, "exeggcute");
+        pokeList.put(103, "exeggutor");
+        pokeList.put(104, "cubone");
+        pokeList.put(105, "marowak");
+        pokeList.put(106, "hitmonlee");
+        pokeList.put(107, "hitmonchan");
+        pokeList.put(108, "lickitung");
+        pokeList.put(109, "koffing");
+        pokeList.put(110, "weezing");
+        pokeList.put(111, "rhyhorn");
+        pokeList.put(112, "rhydon");
+        pokeList.put(113, "chansey");
+        pokeList.put(114, "tangela");
+        pokeList.put(115, "kangaskhan");
+        pokeList.put(116, "horsea");
+        pokeList.put(117, "seadra");
+        pokeList.put(118, "goldeen");
+        pokeList.put(119, "seaking");
+        pokeList.put(120, "staryu");
+        pokeList.put(121, "starmie");
+        pokeList.put(122, "mrmime");
+        pokeList.put(123, "scyther");
+        pokeList.put(124, "jynx");
+        pokeList.put(125, "electabuzz");
     }
 }

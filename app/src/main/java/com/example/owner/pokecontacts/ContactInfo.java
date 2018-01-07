@@ -659,6 +659,106 @@ public class ContactInfo extends AppCompatActivity
         {
             current_contact.changeAvatarNum(100);
         }
+        else if (item.getTitle() == "electrode")
+        {
+            current_contact.changeAvatarNum(101);
+        }
+        else if (item.getTitle() == "exeggcute")
+        {
+            current_contact.changeAvatarNum(102);
+        }
+        else if (item.getTitle() == "exeggutor")
+        {
+            current_contact.changeAvatarNum(103);
+        }
+        else if (item.getTitle() == "cubone")
+        {
+            current_contact.changeAvatarNum(104);
+        }
+        else if (item.getTitle() == "marowak")
+        {
+            current_contact.changeAvatarNum(105);
+        }
+        else if (item.getTitle() == "hitmonlee")
+        {
+            current_contact.changeAvatarNum(106);
+        }
+        else if (item.getTitle() == "hitmonchan")
+        {
+            current_contact.changeAvatarNum(107);
+        }
+        else if (item.getTitle() == "lickitung")
+        {
+            current_contact.changeAvatarNum(108);
+        }
+        else if (item.getTitle() == "koffing")
+        {
+            current_contact.changeAvatarNum(109);
+        }
+        else if (item.getTitle() == "weezing")
+        {
+            current_contact.changeAvatarNum(110);
+        }
+        else if (item.getTitle() == "rhyhorn")
+        {
+            current_contact.changeAvatarNum(111);
+        }
+        else if (item.getTitle() == "rhydon")
+        {
+            current_contact.changeAvatarNum(112);
+        }
+        else if (item.getTitle() == "chansey")
+        {
+            current_contact.changeAvatarNum(113);
+        }
+        else if (item.getTitle() == "tangela")
+        {
+            current_contact.changeAvatarNum(114);
+        }
+        else if (item.getTitle() == "kangaskhan")
+        {
+            current_contact.changeAvatarNum(115);
+        }
+        else if (item.getTitle() == "horsea")
+        {
+            current_contact.changeAvatarNum(116);
+        }
+        else if (item.getTitle() == "seadra")
+        {
+            current_contact.changeAvatarNum(117);
+        }
+        else if (item.getTitle() == "goldeen")
+        {
+            current_contact.changeAvatarNum(118);
+        }
+        else if (item.getTitle() == "seaking")
+        {
+            current_contact.changeAvatarNum(119);
+        }
+        else if (item.getTitle() == "staryu")
+        {
+            current_contact.changeAvatarNum(120);
+        }
+        else if (item.getTitle() == "starmie")
+        {
+            current_contact.changeAvatarNum(121);
+        }
+        else if (item.getTitle() == "mrmime")
+        {
+            current_contact.changeAvatarNum(122);
+        }
+        else if (item.getTitle() == "scyther")
+        {
+            current_contact.changeAvatarNum(123);
+        }
+        else if (item.getTitle() == "jynx")
+        {
+            current_contact.changeAvatarNum(124);
+        }
+        else if (item.getTitle() == "electabuzz")
+        {
+            current_contact.changeAvatarNum(125);
+        }
         else
         {
             return false;
@@ -777,6 +877,31 @@ public class ContactInfo extends AppCompatActivity
         pokeList.put(98, "krabby");
         pokeList.put(99, "kingler");
         pokeList.put(100, "voltorb");
+        pokeList.put(101, "electrode");
+        pokeList.put(102, "exeggcute");
+        pokeList.put(103, "exeggutor");
+        pokeList.put(104, "cubone");
+        pokeList.put(105, "marowak");
+        pokeList.put(106, "hitmonlee");
+        pokeList.put(107, "hitmonchan");
+        pokeList.put(108, "lickitung");
+        pokeList.put(109, "koffing");
+        pokeList.put(110, "weezing");
+        pokeList.put(111, "rhyhorn");
+        pokeList.put(112, "rhydon");
+        pokeList.put(113, "chansey");
+        pokeList.put(114, "tangela");
+        pokeList.put(115, "kangaskhan");
+        pokeList.put(116, "horsea");
+        pokeList.put(117, "seadra");
+        pokeList.put(118, "goldeen");
+        pokeList.put(119, "seaking");
+        pokeList.put(120, "staryu");
+        pokeList.put(121, "starmie");
+        pokeList.put(122, "mrmime");
+        pokeList.put(123, "scyther");
+        pokeList.put(124, "jynx");
+        pokeList.put(125, "electabuzz");
     }
 
     public void setTypes() {
@@ -880,5 +1005,30 @@ public class ContactInfo extends AppCompatActivity
         typeList.put(98, "water,none");
         typeList.put(99, "water,none");
         typeList.put(100, "electric,none");
+        typeList.put(101, "electric,none");
+        typeList.put(102, "grass,psychic");
+        typeList.put(103, "grass,psychic");
+        typeList.put(104, "ground,none");
+        typeList.put(105, "ground,none");
+        typeList.put(106, "fighting,none");
+        typeList.put(107, "fighting,none");
+        typeList.put(108, "normal,none");
+        typeList.put(109, "poison,none");
+        typeList.put(110, "poison,none");
+        typeList.put(111, "ground,rock");
+        typeList.put(112, "ground,rock");
+        typeList.put(113, "normal,none");
+        typeList.put(114, "grass,none");
+        typeList.put(115, "normal,none");
+        typeList.put(116, "water,none");
+        typeList.put(117, "water,none");
+        typeList.put(118, "water,none");
+        typeList.put(119, "water,none");
+        typeList.put(120, "water,none");
+        typeList.put(121, "water,psychic");
+        typeList.put(122, "psychic,none");
+        typeList.put(123, "bug,flying");
+        typeList.put(124, "ice,psychic");
+        typeList.put(125, "electric,none");
     }
 }
