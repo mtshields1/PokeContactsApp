@@ -225,5 +225,31 @@ public class PhoneBookAdapter extends BaseAdapter
         pokeList.put(123, "scyther");
         pokeList.put(124, "jynx");
         pokeList.put(125, "electabuzz");
+        pokeList.put(126, "magmar");
+        pokeList.put(127, "pinsir");
+        pokeList.put(128, "tauros");
+        pokeList.put(129, "magikarp");
+        pokeList.put(130, "gyarados");
+        pokeList.put(131, "lapras");
+        pokeList.put(132, "ditto");
+        pokeList.put(133, "eevee");
+        pokeList.put(134, "vaporeon");
+        pokeList.put(135, "jolteon");
+        pokeList.put(136, "flareon");
+        pokeList.put(137, "porygon");
+        pokeList.put(138, "omanyte");
+        pokeList.put(139, "omastar");
+        pokeList.put(140, "kabuto");
+        pokeList.put(141, "kabutops");
+        pokeList.put(142, "aerodactyl");
+        pokeList.put(143, "snorlax");
+        pokeList.put(144, "articuno");
+        pokeList.put(145, "zapdos");
+        pokeList.put(146, "moltres");
+        pokeList.put(147, "dratini");
+        pokeList.put(148, "dragonair");
+        pokeList.put(149, "dragonite");
+        pokeList.put(150, "mewtwo");
+        pokeList.put(151, "mew");
     }
 }

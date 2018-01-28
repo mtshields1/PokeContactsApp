@@ -759,6 +759,110 @@ public class ContactInfo extends AppCompatActivity
         {
             current_contact.changeAvatarNum(125);
         }
+        else if (item.getTitle() == "magmar")
+        {
+            current_contact.changeAvatarNum(126);
+        }
+        else if (item.getTitle() == "pinsir")
+        {
+            current_contact.changeAvatarNum(127);
+        }
+        else if (item.getTitle() == "tauros")
+        {
+            current_contact.changeAvatarNum(128);
+        }
+        else if (item.getTitle() == "magikarp")
+        {
+            current_contact.changeAvatarNum(129);
+        }
+        else if (item.getTitle() == "gyarados")
+        {
+            current_contact.changeAvatarNum(130);
+        }
+        else if (item.getTitle() == "lapras")
+        {
+            current_contact.changeAvatarNum(131);
+        }
+        else if (item.getTitle() == "ditto")
+        {
+            current_contact.changeAvatarNum(132);
+        }
+        else if (item.getTitle() == "eevee")
+        {
+            current_contact.changeAvatarNum(133);
+        }
+        else if (item.getTitle() == "vaporeon")
+        {
+            current_contact.changeAvatarNum(134);
+        }
+        else if (item.getTitle() == "jolteon")
+        {
+            current_contact.changeAvatarNum(135);
+        }
+        else if (item.getTitle() == "flareon")
+        {
+            current_contact.changeAvatarNum(136);
+        }
+        else if (item.getTitle() == "porygon")
+        {
+            current_contact.changeAvatarNum(137);
+        }
+        else if (item.getTitle() == "omanyte")
+        {
+            current_contact.changeAvatarNum(138);
+        }
+        else if (item.getTitle() == "omastar")
+        {
+            current_contact.changeAvatarNum(139);
+        }
+        else if (item.getTitle() == "kabuto")
+        {
+            current_contact.changeAvatarNum(140);
+        }
+        else if (item.getTitle() == "kabutops")
+        {
+            current_contact.changeAvatarNum(141);
+        }
+        else if (item.getTitle() == "aerodactyl")
+        {
+            current_contact.changeAvatarNum(142);
+        }
+        else if (item.getTitle() == "snorlax")
+        {
+            current_contact.changeAvatarNum(143);
+        }
+        else if (item.getTitle() == "articuno")
+        {
+            current_contact.changeAvatarNum(144);
+        }
+        else if (item.getTitle() == "zapdos")
+        {
+            current_contact.changeAvatarNum(145);
+        }
+        else if (item.getTitle() == "moltres")
+        {
+            current_contact.changeAvatarNum(146);
+        }
+        else if (item.getTitle() == "dratini")
+        {
+            current_contact.changeAvatarNum(147);
+        }
+        else if (item.getTitle() == "dragonair")
+        {
+            current_contact.changeAvatarNum(148);
+        }
+        else if (item.getTitle() == "dragonite")
+        {
+            current_contact.changeAvatarNum(149);
+        }
+        else if (item.getTitle() == "mewtwo")
+        {
+            current_contact.changeAvatarNum(150);
+        }
+        else if (item.getTitle() == "mew")
+        {
+            current_contact.changeAvatarNum(151);
+        }
         else
         {
             return false;
@@ -902,6 +1006,32 @@ public class ContactInfo extends AppCompatActivity
         pokeList.put(123, "scyther");
         pokeList.put(124, "jynx");
         pokeList.put(125, "electabuzz");
+        pokeList.put(126, "magmar");
+        pokeList.put(127, "pinsir");
+        pokeList.put(128, "tauros");
+        pokeList.put(129, "magikarp");
+        pokeList.put(130, "gyarados");
+        pokeList.put(131, "lapras");
+        pokeList.put(132, "ditto");
+        pokeList.put(133, "eevee");
+        pokeList.put(134, "vaporeon");
+        pokeList.put(135, "jolteon");
+        pokeList.put(136, "flareon");
+        pokeList.put(137, "porygon");
+        pokeList.put(138, "omanyte");
+        pokeList.put(139, "omastar");
+        pokeList.put(140, "kabuto");
+        pokeList.put(141, "kabutops");
+        pokeList.put(142, "aerodactyl");
+        pokeList.put(143, "snorlax");
+        pokeList.put(144, "articuno");
+        pokeList.put(145, "zapdos");
+        pokeList.put(146, "moltres");
+        pokeList.put(147, "dratini");
+        pokeList.put(148, "dragonair");
+        pokeList.put(149, "dragonite");
+        pokeList.put(150, "mewtwo");
+        pokeList.put(151, "mew");
     }
 
     public void setTypes() {
@@ -1030,5 +1160,31 @@ public class ContactInfo extends AppCompatActivity
         typeList.put(123, "bug,flying");
         typeList.put(124, "ice,psychic");
         typeList.put(125, "electric,none");
+        typeList.put(126, "fire,none");
+        typeList.put(127, "bug,none");
+        typeList.put(128, "normal,none");
+        typeList.put(129, "water,none");
+        typeList.put(130, "water,flying");
+        typeList.put(131, "water,ice");
+        typeList.put(132, "normal,none");
+        typeList.put(133, "normal,none");
+        typeList.put(134, "water,none");
+        typeList.put(135, "electric,none");
+        typeList.put(136, "fire,none");
+        typeList.put(137, "normal,none");
+        typeList.put(138, "rock,water");
+        typeList.put(139, "rock,water");
+        typeList.put(140, "rock,water");
+        typeList.put(141, "rock,water");
+        typeList.put(142, "rock,flying");
+        typeList.put(143, "normal,none");
+        typeList.put(144, "ice,flying");
+        typeList.put(145, "electric,flying");
+        typeList.put(146, "fire,flying");
+        typeList.put(147, "dragon,none");
+        typeList.put(148, "dragon,none");
+        typeList.put(149, "dragon,flying");
+        typeList.put(150, "psychic,none");
+        typeList.put(151, "psychic,none");
     }
 }
