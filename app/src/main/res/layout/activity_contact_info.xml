@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@mipmap/path_bg"
-    tools:context="com.example.owner.pokecontacts.ContactInfo">
+    tools:context="com.example.owner.pokecontacts.proj.example.owner.pokecontacts.ContactInfo">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
