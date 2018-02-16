@@ -223,10 +223,13 @@ public class MainActivity extends Activity
                     theContact.android_contact_name = contactDisplayName;
                     
                     //-----< Attempt to add the index to the first letter of this contact if it is the first of this contact that starts with this letter >-----
-                    char startingChar = contactDisplayName.charAt(0);
-                    if (contactLocations.get(startingChar) == -1)
-                    {
-                        contactLocations.put(startingChar, currIndex);
+                    //-----< Also need to check to ensure the character is actually an alphabetical character >----
+                    if (Character.isLetter(contactDisplayName.charAt(0))){
+                        char startingChar = Character.toUpperCase(contactDisplayName.charAt(0));
+                        if (contactLocations.get(startingChar) == -1)
+                        {
+                            contactLocations.put(startingChar, currIndex);
+                        }
                     }
                     
                     //----< retrieve and add the number to the contact object >-----
