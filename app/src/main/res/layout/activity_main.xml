@@ -5,7 +5,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@mipmap/poke_center_floor"
-    tools:context="com.example.owner.pokecontacts.proj.example.owner.pokecontacts.MainActivity"
+    tools:context="proj.prod.owner.pokecontacts.MainActivity"
     android:weightSum="1">
 
     <ListView android:id="@+id/listPhone"

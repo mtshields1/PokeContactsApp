@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.owner.pokecontacts.proj.example.owner.pokecontacts.ContactInfo"
+    tools:context="proj.prod.owner.pokecontacts.ContactInfo"
     tools:showIn="@layout/activity_contact_info">
 
     <android.support.design.widget.FloatingActionButton
